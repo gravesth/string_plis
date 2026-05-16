@@ -2,21 +2,32 @@
 #include <check.h>
 #include <string.h>
 
-START_TEST(test_memchr) {
-  char mass[] = "hello world";
-  char ch = '0';
+START_TEST(test_memchr_basic) {
+  char mass[] = "hello world"; 
+  char ch = '0'; 
 
-  const void *orig = memchr(mass, ch, strlen(mass));
-  const void *s21_result = s21_memchr(mass, ch, strlen(mass));
+  const int *orig = memchr(mass, ch, strlen(mass));
+  const int *s21_result = s21_memchr(mass, ch, strlen(mass));
 
   ck_assert_ptr_eq(orig, s21_result);
 }
 END_TEST
 
+START_TEST(test_memchr_array) { 
+  char *mass = {"123123", "dsfasdfasd", "dddsasd"}; 
+  char ch = '1';
+
+  const int *orig = memchr(mass, ch, strlen(mass));
+  const int *s21_result = s21_memchr(mass, ch, strlen(mass));
+
+  ck_assert_ptr_eq(orig, s21_result);
+
+}
 Suite *memchr_suite(void) {
   Suite *s = suite_create("Tests");
   TCase *tc = tcase_create("Tests");
-  tcase_add_test(tc, test_memchr);
+  tcase_add_test(tc, test_memchr_basic);
+  tcase_add_test(tc, test_memchr_array);
   suite_add_tcase(s, tc);
   return s;
 }
