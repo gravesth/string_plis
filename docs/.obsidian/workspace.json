@@ -131,13 +131,11 @@
               "title": "Закладки"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "076beaa5395ba4e7",
@@ -242,7 +240,7 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "8ae697424b621eaa",
+  "active": "993f2c50063e978c",
   "lastOpenFiles": [
     "Статическая библиотека.md",
     "Makefile.md",
