@@ -19,6 +19,7 @@ s21_memchr.o: s21_memchr.c
 s21_memcmp.o: s21_memcmp
 	$(CC) -c mem/s21_memcmp.c -o mem/s21_memcmp.o
 
+
 str/s21_strncpy.o: str/s21_strncpy.c
 	$(CC) -c strncpy/s21_strncpy.c -o strncpy/s21_strncpy.o
 
@@ -29,6 +30,7 @@ style:
 	clang-format -i *.c *.h
 
 clean:
+
 	rm -f $(TARGET) && rm -f *.o
 
 .PHONY: all test clean gcov_report
