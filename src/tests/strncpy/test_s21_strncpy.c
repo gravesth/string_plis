@@ -1,4 +1,5 @@
 #include <check.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "../../s21_string.h"
@@ -82,8 +83,33 @@ START_TEST(test_empty) {
   s21_dest[0] = 'X';
   s21_strncpy(s21_dest, s21_src, 0);
 
-  ck_assert_char_eq(s21_dest, 'X');
+  ck_assert_int_eq(s21_dest[0], 'X');
 
   free(s21_dest);
 }
 END_TEST
+
+int main() {
+  Suite *s = suite_create("Strncpy Module");
+
+  TCase *tc_basic = tcase_create("Basic Tests");
+  tcase_add_test(tc_basic, test_equal_len);
+  tcase_add_test(tc_basic, test_min_len);
+  tcase_add_test(tc_basic, test_max_len);
+  suite_add_tcase(s, tc_basic);
+
+  TCase *tc_return = tcase_create("Return Test");
+  tcase_add_test(tc_return, test_return);
+  suite_add_tcase(s, tc_return);
+
+  TCase *tc_extreme = tcase_create("Extreme Test");
+  tcase_add_test(tc_extreme, test_null);
+  tcase_add_test(tc_extreme, test_empty);
+  suite_add_tcase(s, tc_extreme);
+
+  SRunner *sr = srunner_create(s);
+  srunner_run_all(sr, CK_NORMAL);
+  int numberFailed = srunner_ntests_failed(sr) == 0 ? 0 : 1;
+  srunner_free(sr);
+  return numberFailed;
+}
