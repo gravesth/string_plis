@@ -1,6 +1,4 @@
 #include "../../s21_string.h"
-#include <check.h>
-#include <string.h>
 
 START_TEST(test_memchr_basic) {
   char mass[] = "hello world"; 
@@ -23,6 +21,7 @@ START_TEST(test_memchr_array) {
   ck_assert_ptr_eq(orig, s21_result);
 
 }
+
 Suite *memchr_suite(void) {
   Suite *s = suite_create("Tests");
   TCase *tc = tcase_create("Tests");
@@ -30,14 +29,4 @@ Suite *memchr_suite(void) {
   tcase_add_test(tc, test_memchr_array);
   suite_add_tcase(s, tc);
   return s;
-}
-
-int main() { 
-    Suite *s = memchr_suite(); 
-
-    SRunner *sr = srunner_create(s); 
-    srunner_run_all(sr, CK_NORMAL);
-    int num_failed = srunner_ntests_failed(sr); 
-    srunner_free(sr);
-    return (num_failed == 0) ? 0 : 1;
 }
