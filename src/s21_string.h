@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <check.h>
+#include <stdio.h>
 #include <string.h>
 
 typedef unsigned long s21_size_t;
