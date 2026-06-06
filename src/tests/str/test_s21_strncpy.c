@@ -1,8 +1,8 @@
-#include <check.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "../../s21_string.h"
+#include "../test_runner.h"
 // tc_basic
 START_TEST(test_equal_len) {
   const char *s21_src = "abcdf";
@@ -89,7 +89,7 @@ START_TEST(test_empty) {
 }
 END_TEST
 
-int main() {
+Suite *strncpy_suite(void) {
   Suite *s = suite_create("Strncpy Module");
 
   TCase *tc_basic = tcase_create("Basic Tests");
@@ -107,9 +107,5 @@ int main() {
   tcase_add_test(tc_extreme, test_empty);
   suite_add_tcase(s, tc_extreme);
 
-  SRunner *sr = srunner_create(s);
-  srunner_run_all(sr, CK_NORMAL);
-  int numberFailed = srunner_ntests_failed(sr) == 0 ? 0 : 1;
-  srunner_free(sr);
-  return numberFailed;
+  return s;
 }
