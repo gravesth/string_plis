@@ -4,7 +4,7 @@ CLAGS = -Wall -Werror -Wextra -Include
 # TEST_TARGET = gcov_report
 TARGET = s21_string.a
 
-OBJ = mem/s21_memchr.o mem/s21_memcmp.o
+OBJ = mem/s21_memchr.o mem/s21_memcmp.o str/s21_strncpy.o
 
 CHECK_LIBS = -lcheck -lsubunit -lm -lpthread
 
@@ -19,7 +19,7 @@ s21_memchr.o: s21_memchr.c
 s21_memcmp.o: s21_memcmp
 	$(CC) -c mem/s21_memcmp.c -o mem/s21_memcmp.o
 
-strncpy/s21_strncpy.o: strncpy/s21_strncpy.c
+str/s21_strncpy.o: str/s21_strncpy.c
 	$(CC) -c strncpy/s21_strncpy.c -o strncpy/s21_strncpy.o
 
 test:
