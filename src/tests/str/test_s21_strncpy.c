@@ -54,7 +54,6 @@ END_TEST
 // tc_return
 START_TEST(test_return) {
   const char *s21_src = "abcdf";
-  const char *src = "abcdf";
   s21_size_t n = 6;
   char *s21_dest = malloc(n * sizeof(char));
 
@@ -66,7 +65,6 @@ END_TEST
 // tc_extreme
 START_TEST(test_null) {
   const char *s21_src = "\0";
-  const char *src = "\0";
   s21_size_t n = 1;
   char *s21_dest = malloc(n * sizeof(char));
 
