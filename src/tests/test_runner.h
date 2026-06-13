@@ -6,5 +6,6 @@
 Suite *memcmp_suite(void);
 Suite *memchr_suite(void);
 Suite *strncpy_suite(void);
+Suite *strerror_suite(void);
 
 #endif
