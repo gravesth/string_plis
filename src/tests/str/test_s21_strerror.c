@@ -24,9 +24,7 @@ START_TEST(unknow_test) {
 }
 END_TEST
 
-START_TEST(negative_test) {
-  ck_assert_str_eq(s21_strerror(-1), "no error");
-}
+START_TEST(negative_test) { ck_assert_str_eq(s21_strerror(-1), "no error"); }
 END_TEST
 
 Suite *strerror_suite(void) {

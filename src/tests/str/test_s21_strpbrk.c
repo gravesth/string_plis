@@ -3,7 +3,6 @@
 #include "../../s21_string.h"
 #include "../test_runner.h"
 
-
 START_TEST(start_symbol_test) {
   ck_assert_ptr_eq(s21_strpbrk("abcd", "a"), strpbrk("abcd", "a"));
 }
@@ -44,8 +43,6 @@ START_TEST(empty_str_test) {
   ck_assert_ptr_eq(s21_strpbrk("", ""), strpbrk("", ""));
 }
 END_TEST
-
-
 
 START_TEST(register_test) {
   ck_assert_ptr_eq(s21_strpbrk("abcd", "ABCD"), strpbrk("abcd", "ABCD"));
