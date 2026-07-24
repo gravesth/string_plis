@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+
 #include "../../s21_string.h"
 #include "../test_runner.h"
 
@@ -77,8 +78,8 @@ END_TEST
 Suite *strncat_suite(void) {
   Suite *s = suite_create("test block 1");
   TCase *tc_basic = tcase_create("Basic Tests");
-  tcase_add_test(tc_basic, test_strncat_basic); // 
-  tcase_add_test(tc_basic, test_strncat_partial_n); // 
+  tcase_add_test(tc_basic, test_strncat_basic);      //
+  tcase_add_test(tc_basic, test_strncat_partial_n);  //
   tcase_add_test(tc_basic, test_strncat_max_n);
   suite_add_tcase(s, tc_basic);
 
