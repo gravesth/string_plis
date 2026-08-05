@@ -18,3 +18,5 @@ int main() {
   srunner_free(sr);
   return (failed == 0) ? 0 : 1;
 }
+
+#include "str/test_s21_sprintf.c"
