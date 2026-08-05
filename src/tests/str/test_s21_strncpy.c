@@ -60,7 +60,7 @@ START_TEST(test_return) {
 
   free(s21_dest);
 }
-END_TEST // tc_extreme
+END_TEST  // tc_extreme
 START_TEST(test_null) {
   const char *s21_src = "\0";
   s21_size_t n = 1;
