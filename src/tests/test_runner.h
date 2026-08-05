@@ -12,4 +12,6 @@ Suite *strerror_suite(void);
 Suite *strpbrk_suite(void);
 Suite *strrchr_suite(void);
 
+Suite *strstr_suite(void);
+Suite *strtok_suite(void);
 #endif

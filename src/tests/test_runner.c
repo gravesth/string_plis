@@ -13,8 +13,12 @@ int main() {
   srunner_add_suite(sr, strerror_suite());
   srunner_add_suite(sr, strpbrk_suite());
   srunner_add_suite(sr, strrchr_suite());
+  srunner_add_suite(sr, strstr_suite());
+  srunner_add_suite(sr, strtok_suite());
   srunner_run_all(sr, CK_NORMAL);
   int failed = srunner_ntests_failed(sr);
   srunner_free(sr);
   return (failed == 0) ? 0 : 1;
 }
+
+#include "str/test_s21_sprintf.c"
